@@ -1,0 +1,454 @@
+:root {
+    --primary-color: #6a1b9a;
+    --secondary-color: #9c4dcc;
+    --accent-color: #ff9933; /* Saffron color */
+    --light-color: #f5f5f5;
+    --dark-color: #333;
+    --success-color: #138808; /* India green */
+    --warning-color: #ff9800;
+    --danger-color: #f44336;
+    --info-color: #2196f3;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.lpu-logo {
+    height: 70px;
+    width: auto; /* Maintains aspect ratio */
+    margin-right: 15px;
+
+    transition: transform 0.3s ease-in-out;
+}
+.lpu-logo:hover {
+    transform: scale(1.2); /* Increases the size by 20% on hover */
+}
+
+.team-info {
+    text-align: right;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.team-info span {
+    display: block;
+}
+
+.team-member {
+    margin-bottom: 3px;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    margin-right: 10px;
+}
+
+.main-content {
+    display: flex;
+    gap: 20px;
+}
+
+.chat-history {
+    width: 250px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    height: 600px;
+    overflow-y: auto;
+}
+
+.chat-history h3 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    color: var(--primary-color);
+}
+
+.history-item {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+}
+
+.history-item:hover {
+    background-color: #f5f5f5;
+}
+
+.history-query {
+    font-weight: 500;
+}
+
+.history-time {
+    font-size: 11px;
+    color: #666;
+}
+
+.chat-container {
+    flex-grow: 1;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+}
+
+.chat-header {
+    background-color: #9b59b6;
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.chat-header img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message {
+    max-width: 80%;
+    padding: 12px 16px;
+    border-radius: 18px;
+    line-height: 1.4;
+    position: relative;
+}
+
+.bot-message {
+    align-self: flex-start;
+    background-color: #f1f1f1;
+    border-bottom-left-radius: 5px;
+}
+
+.user-message {
+    align-self: flex-end;
+    background-color: #8e44ad;
+    color: white;
+    border-bottom-right-radius: 5px;
+}
+
+.input-area {
+    display: flex;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+    border-radius: 0 0 10px 10px;
+    position: relative;
+}
+
+.search-container {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+#order-search {
+    flex-grow: 1;
+    padding: 15px 20px;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s;
+    padding-right: 50px;
+}
+
+#order-search:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(255, 153, 51, 0.2);
+}
+
+.search-btn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-btn:hover {
+    background-color: #e68a00;
+}
+
+.suggestion-buttons {
+    display: flex;
+    gap: 10px;
+    padding: 10px 15px;
+    background-color: #f9f9f9;
+    flex-wrap: wrap;
+}
+
+.suggestion-btn {
+    background-color: #e0d0e9;
+    border: none;
+    border-radius: 15px;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.suggestion-btn:hover {
+    background-color: #d0b0e0;
+    transform: translateY(-2px);
+}
+
+/* Order card styles */
+.order-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 10px;
+    background-color: #f9f9f9;
+}
+
+.order-card h4 {
+    margin-top: 0;
+    color: #8e44ad;
+}
+
+.order-status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.status-pending {
+    background-color: #fff3e0;
+    color: #e65100;
+}
+
+.status-processing {
+    background-color: #e3f2fd;
+    color: #1565c0;
+}
+
+.status-shipped {
+    background-color: #e8f5e9;
+    color: var(--success-color);
+}
+
+.status-delivered {
+    background-color: #f3e5f5;
+    color: #6a1b9a;
+}
+
+.status-tracker {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    position: relative;
+}
+
+.status-tracker:before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: #ddd;
+    z-index: 1;
+}
+
+.status-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.status-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    color: white;
+    font-size: 14px;
+}
+
+.status-icon.completed {
+    background-color: var(--primary-color);
+}
+
+.status-icon.active {
+    background-color: var(--accent-color);
+    animation: pulse 2s infinite;
+}
+
+.status-label {
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    max-width: 80px;
+}
+
+.status-label.active {
+    font-weight: bold;
+    color: var(--dark-color);
+}
+
+.order-items {
+    margin-top: 10px;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.order-summary {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+    font-weight: bold;
+}
+
+.tracking-map {
+    height: 200px;
+    background-color: #eee;
+    border-radius: 8px;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    flex-direction: column;
+}
+
+.tracking-map i {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.rupee-symbol:before {
+    content: "₹";
+    margin-right: 2px;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes blink {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+.typing-indicator {
+    display: flex;
+    padding: 10px 15px;
+    background-color: #f1f1f1;
+    border-radius: 18px;
+    align-self: flex-start;
+    margin-bottom: 15px;
+    width: fit-content;
+}
+
+.typing-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #666;
+    border-radius: 50%;
+    margin: 0 2px;
+    animation: blink 1.4s infinite both;
+}
+
+.typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.clear-history {
+    color: var(--danger-color);
+    text-decoration: none;
+    font-size: 12px;
+    display: inline-block;
+    margin-top: 10px;
+}
